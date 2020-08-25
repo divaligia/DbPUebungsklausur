@@ -12,7 +12,7 @@ public class Starter {
         myHelper.createRechnungTable();
 
         Kunde k1 = new Kunde("Valentina", "Krammer", "Frau", 2);
-        int kundenNumer = myHelper.insertKunde(k1);
+        myHelper.insertKunde(k1);
 
         System.out.println(k1);
 
@@ -43,6 +43,10 @@ public class Starter {
 
         Kunde kunde = new Kunde("Bärbel", "Wastl", "Frau", 580.7);
 
+        Rechnung rechnung = new Rechnung("22.08.2020", 30.5);
+        rechnungenKD.add(rechnung);
+        rechnung.setGesamtbetrag(40.20);
+        myHelper.updateRechnung(rechnung);
         myHelper.insertKundeUndRechnungen(rechnungenKD, kunde);
 
         System.out.println("kunde = " + kunde.getVorname() + " " + kunde.getNachname());
@@ -50,5 +54,6 @@ public class Starter {
         for(Rechnung r : rechnungen3){
             System.out.println(r);
         }
+
     }
 }

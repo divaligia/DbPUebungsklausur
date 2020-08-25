@@ -15,7 +15,7 @@ public class Kunde {
         this.bonuspunkte = bonuspunkte;
     }
 
-    //
+
     public Kunde(String vorname, String nachname, String geschlecht, double bonuspunkte) {
         this.vorname = vorname;
         this.nachname = nachname;

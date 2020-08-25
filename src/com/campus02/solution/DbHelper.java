@@ -112,7 +112,7 @@ public class DbHelper {
                 } catch (KundeDoesNotExistException e) {
                     e.printStackTrace();
                 }
-            } else System.out.println("Kundendaten wurden verändert");
+            } else System.out.println("Kundendaten wurden verändert!");
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -211,7 +211,21 @@ public class DbHelper {
     }
 
     public void updateRechnung(Rechnung neueRechnung){
-        String update = "UPDATE Rechnungen SET reNr = ?, Datum = ?, Gesamtbetrag = ?, Bonuspunkte = ? WHERE KDNR = ?;";
+        String update = "UPDATE Rechnungen SET Datum = ?, Gesamtbetrag = ?, KDNRfk = ? WHERE reNr = ?;";
+        try {
+            PreparedStatement pstm = conn.prepareStatement(update);
+            pstm.setString(1, neueRechnung.getDatum());
+            pstm.setDouble(2, neueRechnung.getGesamtbetrag());
+            pstm.setInt(3, neueRechnung.getKDNRfk());
+            pstm.setInt(4, neueRechnung.getReNr());
+
+            int count = pstm.executeUpdate();
+            if(count == 0){
+                System.out.println("Tabelle Rechnungen existiert nicht!");
+            } else System.out.println("Rechnungsdaten wurden verändert");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
     }
 

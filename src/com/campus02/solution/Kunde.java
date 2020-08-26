@@ -1,4 +1,9 @@
 package com.campus02.solution;
+// Aufgabe 1) (10 Punkte)
+// Erstellen Sie ein neues Projekt mit dem Namen „PrjKlausurvorbereitung“.
+// Erstellen Sie eine Klasse „Kunde“ und eine Klasse „Rechnungen“ mit den
+// erforderlichen privaten Membervariablen und den dazu gehörigen Gettern und Settern.
+// (Das Datum kann als normaler String behandelt werden)
 
 public class Kunde {
     private int KDNR;

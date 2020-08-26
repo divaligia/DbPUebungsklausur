@@ -69,7 +69,6 @@ public class DbHelper {
         try {
             PreparedStatement pstm = conn.prepareStatement(check);
             pstm.setString(1,tablename);
-            // !!!! BEI SELECT IMMER QUERY ausführen
             ResultSet rs = pstm.executeQuery();
 
             if(rs.next()){
